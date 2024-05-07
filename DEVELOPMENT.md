@@ -1,0 +1,19 @@
+﻿# Development setup
+
+## Steam
+
+- Install .NET SDK v6
+  - https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-6.0.421-windows-x64-installer
+  - This version was required to generate the plugin from a template, but perhaps a different version will work for you.
+- Download BepInEx v6 (4901521, build date 2024-02-10T05:53:59), for IL2CPP, Windows, x64
+  - https://builds.bepinex.dev/projects/bepinex_be 
+  - https://builds.bepinex.dev/projects/bepinex_be/688/BepInEx-Unity.IL2CPP-win-x64-6.0.0-be.688%2B4901521.zip
+- Extract BepInEx into the game directory (in `Steam\steamapps\common\Disco Elysium`)
+- Run the game once. You should see the BepInEx console.
+- From the directory `Disco Elysium\BepInEx\interop`, copy the files `Assembly-CSharp.dll`, `DialogueSystem.dll`, and
+  `IL2Cppmscorlib.dll`.
+- Create a dir in this project called `lib\`. Paste the DLL files.
+- Build the plugin DLL using `dotnet build`.
+- Copy the built DLL from `bin\Debug\net6.0\DiscoElysiumModPlugin.dll"`.
+- Paste the built DLL into `Disco Elysium\BepInEx\plugins\DiscoElysiumModPlugin`
+- Run the game and test your changes!
