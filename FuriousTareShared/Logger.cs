@@ -1,4 +1,4 @@
-﻿namespace FuriousTareSteam;
+﻿namespace FuriousTareShared;
 
 public class Logger
 {

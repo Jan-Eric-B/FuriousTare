@@ -31,4 +31,13 @@
         <HintPath>lib\Il2Cppmscorlib.dll</HintPath>
       </Reference>
     </ItemGroup>
+
+    <ItemGroup>
+      <Compile Include="..\FuriousTareShared\Logger.cs">
+        <Link>FuriousTareShared\Logger.cs</Link>
+      </Compile>
+      <Compile Include="..\FuriousTareShared\VoiceOverFixAlternatives.cs">
+        <Link>FuriousTareShared\VoiceOverFixAlternatives.cs</Link>
+      </Compile>
+    </ItemGroup>
 </Project>

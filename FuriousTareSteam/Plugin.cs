@@ -1,5 +1,6 @@
 ﻿using BepInEx;
 using BepInEx.Unity.IL2CPP;
+using FuriousTareShared;
 
 namespace FuriousTareSteam;
 

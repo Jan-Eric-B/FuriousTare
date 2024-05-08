@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net35</TargetFramework>
+        <TargetFramework>netstandard2.0</TargetFramework>
         <Description>Disco Elysium unofficial patch mod for GOG</Description>
         <Version>1.0.0</Version>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -18,10 +18,32 @@
         <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all"/>
         <PackageReference Include="BepInEx.Unity.Mono" Version="6.0.0-be.*" IncludeAssets="compile"/>
         <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*"/>
-        <PackageReference Include="UnityEngine.Modules" Version="5.6.0" IncludeAssets="compile"/>
+        <PackageReference Include="UnityEngine.Modules" Version="2020.3.12" IncludeAssets="compile"/>
     </ItemGroup>
 
     <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
         <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Include="..\FuriousTareShared\Logger.cs">
+        <Link>FuriousTareShared\Logger.cs</Link>
+      </Compile>
+      <Compile Include="..\FuriousTareShared\VoiceOverFixAlternatives.cs">
+        <Link>FuriousTareShared\VoiceOverFixAlternatives.cs</Link>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="lib\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="Assembly-CSharp">
+        <HintPath>lib\Assembly-CSharp.dll</HintPath>
+      </Reference>
+      <Reference Include="DialogueSystem">
+        <HintPath>lib\DialogueSystem.dll</HintPath>
+      </Reference>
     </ItemGroup>
 </Project>

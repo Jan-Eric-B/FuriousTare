@@ -1,7 +1,7 @@
 ﻿using HarmonyLib;
 using PixelCrushers.DialogueSystem;
 
-namespace FuriousTareSteam;
+namespace FuriousTareShared;
 
 /**
  * The wrong voice over is played when a dialogue entry contains a script that
