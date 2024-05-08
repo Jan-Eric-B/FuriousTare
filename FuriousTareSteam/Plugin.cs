@@ -1,7 +1,7 @@
 ﻿using BepInEx;
 using BepInEx.Unity.IL2CPP;
 
-namespace DiscoElysiumModPlugin;
+namespace FuriousTareSteam;
 
 [BepInPlugin(
     MyPluginInfo.PLUGIN_GUID,

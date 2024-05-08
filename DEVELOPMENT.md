@@ -12,8 +12,19 @@
 - Run the game once. You should see the BepInEx console.
 - From the directory `Disco Elysium\BepInEx\interop`, copy the files `Assembly-CSharp.dll`, `DialogueSystem.dll`, and
   `IL2Cppmscorlib.dll`.
-- Create a dir in this project called `lib\`. Paste the DLL files.
-- Build the plugin DLL using `dotnet build`.
+- Create the directory `lib\` in project `FuriousTareSteam\`. Paste the DLL files.
+- Install dependencies: `dotnet restore`
+- Build the plugin DLL: `dotnet build`.
 - Copy the built DLL from `bin\Debug\net6.0\DiscoElysiumModPlugin.dll"`.
 - Paste the built DLL into `Disco Elysium\BepInEx\plugins\DiscoElysiumModPlugin`
 - Run the game and test your changes!
+
+## GOG
+
+- Download BepInEx v6 for Mono, Windows, x64
+  - https://builds.bepinex.dev/projects/bepinex_be/688/BepInEx-Unity.Mono-win-x64-6.0.0-be.688%2B4901521.zip
+- Extract BepInEx into the game directory
+- Run the game once. You should see the BepInEx console.
+
+### TODO: the rest of the thing
+- From the directory `Disco Elysium\Disco Elysium_data\Managed`, copy the files `Assembly-CSharp.dll`, `DialogueSystem.dll`

@@ -1,4 +1,4 @@
-﻿namespace DiscoElysiumModPlugin;
+﻿namespace FuriousTareSteam;
 
 public class Logger
 {
