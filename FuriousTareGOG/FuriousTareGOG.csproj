@@ -26,24 +26,27 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Compile Include="..\FuriousTareShared\Logger.cs">
-        <Link>FuriousTareShared\Logger.cs</Link>
-      </Compile>
-      <Compile Include="..\FuriousTareShared\VoiceOverFixAlternatives.cs">
-        <Link>FuriousTareShared\VoiceOverFixAlternatives.cs</Link>
-      </Compile>
+        <Compile Include="..\FuriousTareShared\Logger.cs">
+            <Link>FuriousTareShared\Logger.cs</Link>
+        </Compile>
+        <Compile Include="..\FuriousTareShared\PluginEntryPoint.cs">
+            <Link>FuriousTareShared\PluginEntryPoint.cs</Link>
+        </Compile>
+        <Compile Include="..\FuriousTareShared\VoiceOverFixAlternatives.cs">
+            <Link>FuriousTareShared\VoiceOverFixAlternatives.cs</Link>
+        </Compile>
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="lib\" />
+        <Folder Include="lib\"/>
     </ItemGroup>
 
     <ItemGroup>
-      <Reference Include="Assembly-CSharp">
-        <HintPath>lib\Assembly-CSharp.dll</HintPath>
-      </Reference>
-      <Reference Include="DialogueSystem">
-        <HintPath>lib\DialogueSystem.dll</HintPath>
-      </Reference>
+        <Reference Include="Assembly-CSharp">
+            <HintPath>lib\Assembly-CSharp.dll</HintPath>
+        </Reference>
+        <Reference Include="DialogueSystem">
+            <HintPath>lib\DialogueSystem.dll</HintPath>
+        </Reference>
     </ItemGroup>
 </Project>

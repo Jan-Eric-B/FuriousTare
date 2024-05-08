@@ -16,18 +16,13 @@ namespace FuriousTareGOG;
 public class Plugin : BaseUnityPlugin
 #pragma warning restore BepInEx002
 {
-    Plugin()
+    public Plugin()
     {
         FuriousTareShared.Logger.Log = Logger;
     }
     
     private void Awake()
     {
-        // Plugin startup logic
-        Logger.LogInfo(
-            $"Plugin {MyPluginInfo.PLUGIN_GUID} is loaded!"
-        );
-        
-        VoiceOverFixAlternatives.RegisterPatches();
+        var pluginEntryPoint = new PluginEntryPoint(MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_GUID);
     }
 }

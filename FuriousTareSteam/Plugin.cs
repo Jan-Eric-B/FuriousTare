@@ -21,11 +21,6 @@ public class Plugin : BasePlugin
 
     public override void Load()
     {
-        // Plugin startup logic
-        Log.LogInfo(
-            $"Plugin {MyPluginInfo.PLUGIN_GUID} is loaded!"
-        );
-
-        VoiceOverFixAlternatives.RegisterPatches();
+        var pluginEntryPoint = new PluginEntryPoint(MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_GUID);
     }
 }

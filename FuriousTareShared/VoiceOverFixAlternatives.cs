@@ -13,11 +13,18 @@ namespace FuriousTareShared;
  * - Hooking into `JanusNode.HandleEntry()`, querying the "alternative ID" and storing it
  * - Hooking into `JanusNode.GetIDOfConditionMet()`, returning the stored "alternative ID"
  */
+[HarmonyPatch(
+    typeof(JanusNode)
+)]
 public class VoiceOverFixAlternatives
 {
     private static int? _lastDialogueEntryId;
     private static int? _lastAlternativeId;
 
+    [HarmonyPostfix]
+    [HarmonyPatch(
+        nameof(JanusNode.GetIDOfConditionMet)
+    )]
     // ReSharper disable twice InconsistentNaming
     public static void GetIDOfConditionMetHook(ref int __result, DialogueEntry entry)
     {
@@ -28,6 +35,7 @@ public class VoiceOverFixAlternatives
         {
             return;
         }
+
         if (_lastDialogueEntryId == entry.id && _lastAlternativeId != null && __result != _lastAlternativeId)
         {
             Logger.Log.LogInfo(
@@ -35,10 +43,16 @@ public class VoiceOverFixAlternatives
             );
             __result = _lastAlternativeId.Value;
         }
+
         // Always reset state afterwards, so we don't accidentally match some other text/voice over pair.
         ResetState();
     }
 
+    [HarmonyPostfix]
+    [HarmonyPatch(
+        nameof(JanusNode.HandleEntry),
+        new[] { typeof(DialogueEntry) }
+    )]
     public static void HandleEntryHook(DialogueEntry entry)
     {
         ResetState(); // required before SetState, so we don't ignore the newly calculated alternative ID
@@ -62,41 +76,5 @@ public class VoiceOverFixAlternatives
             entry
         );
         _lastDialogueEntryId = entry.id;
-    }
-
-    public static void RegisterPatches()
-    {
-        var harmony = new Harmony(
-            "FuriousTare.DiscoElysium.UnofficialPatch"
-        );
-
-        // Hook `JanusNode.HandleEntry`
-        harmony.Patch(
-            AccessTools.Method(
-                typeof(JanusNode),
-                nameof(JanusNode.HandleEntry),
-                new[] { typeof(DialogueEntry) }
-            ),
-            postfix: new HarmonyMethod(
-                AccessTools.Method(
-                    typeof(VoiceOverFixAlternatives),
-                    nameof(HandleEntryHook)
-                )
-            )
-        );
-
-        // Hook `JanusNode.GetIDOfConditionMet`
-        harmony.Patch(
-            AccessTools.Method(
-                typeof(JanusNode),
-                nameof(JanusNode.GetIDOfConditionMet)
-            ),
-            postfix: new HarmonyMethod(
-                AccessTools.Method(
-                    typeof(VoiceOverFixAlternatives),
-                    nameof(GetIDOfConditionMetHook)
-                )
-            )
-        );
     }
 }
