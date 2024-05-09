@@ -1,5 +1,9 @@
 ﻿# Development setup
 
+For some reason, the GOG version of Disco Elysium is built using a Mono runtime, but the Steam version uses IL2CPP.
+
+This means we need to produce two separate versions of the mod.
+
 ## Steam
 
 - Install .NET SDK v6
