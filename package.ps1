@@ -14,8 +14,9 @@ dotnet build --configuration "Release"
 Copy-Item -Path "FuriousTareGOG\bin\Release\netstandard2.0\FuriousTareGOG.dll" -Destination "temp\package\GOG\BepInEx\plugins\FuriousTareGOG"
 Copy-Item -Path "FuriousTareSteam\bin\Release\net6.0\FuriousTareSteam.dll" -Destination "temp\package\Steam\BepInEx\plugins\FuriousTareSteam"
 
-Compress-Archive -Path "temp\package\GOG\*" -DestinationPath "temp\FuriousTareGOG.zip"
-Compress-Archive -Path "temp\package\Steam\*" -DestinationPath "temp\FuriousTareSteam.zip"
+$Today = (Get-Date).ToUniversalTime().ToString('yyyy-MM-dd')
+Compress-Archive -Path "temp\package\GOG\*" -DestinationPath "temp\FuriousTareGOG_$Today.zip"
+Compress-Archive -Path "temp\package\Steam\*" -DestinationPath "temp\FuriousTareSteam_$Today.zip"
 Remove-Item -Force -Recurse -ErrorAction "Continue" -Path "temp/package"
 
 echo "Done!"
