@@ -34,3 +34,9 @@
 - Copy the built DLL from `bin\Debug\netstandard2.0\FuriousTareGOG.dll"`.
 - Paste the built DLL into `Disco Elysium\BepInEx\plugins\FuriousTareGOG`
 - Run the game and test your changes!
+
+## Packaging a release
+
+- Copy the BepInEx zips, for both IL2CPP and Mono, into the project directory `BepInEx`
+- Ensure you can run unsigned PowerShell scripts: `Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope Process`
+- Run `package.ps1`. This will create two archives a `temp\` directory.

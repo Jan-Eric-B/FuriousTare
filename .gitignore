@@ -2,8 +2,11 @@
 bin/
 lib/
 obj/
+temp/
 
 *.DotSettings.user
 /packages/
 riderModule.iml
 /_ReSharper.Caches/
+
+BepInEx/*.zip
