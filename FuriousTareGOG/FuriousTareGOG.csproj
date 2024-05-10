@@ -26,14 +26,8 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Compile Include="..\FuriousTareShared\Logger.cs">
-            <Link>FuriousTareShared\Logger.cs</Link>
-        </Compile>
-        <Compile Include="..\FuriousTareShared\PluginEntryPoint.cs">
-            <Link>FuriousTareShared\PluginEntryPoint.cs</Link>
-        </Compile>
-        <Compile Include="..\FuriousTareShared\Patches\VoiceOverFixAlternatives.cs">
-            <Link>FuriousTareShared\Patches\VoiceOverFixAlternatives.cs</Link>
+        <Compile Include="..\FuriousTareShared\**\*">
+            <Link>%(RecursiveDir)%(FileName)%(Extension)</Link>
         </Compile>
     </ItemGroup>
 
