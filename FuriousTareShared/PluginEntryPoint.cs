@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using FuriousTareShared.Patches;
 
 namespace FuriousTareShared;
 

@@ -32,8 +32,8 @@
         <Compile Include="..\FuriousTareShared\PluginEntryPoint.cs">
             <Link>FuriousTareShared\PluginEntryPoint.cs</Link>
         </Compile>
-        <Compile Include="..\FuriousTareShared\VoiceOverFixAlternatives.cs">
-            <Link>FuriousTareShared\VoiceOverFixAlternatives.cs</Link>
+        <Compile Include="..\FuriousTareShared\Patches\VoiceOverFixAlternatives.cs">
+            <Link>FuriousTareShared\Patches\VoiceOverFixAlternatives.cs</Link>
         </Compile>
     </ItemGroup>
 
