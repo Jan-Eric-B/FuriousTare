@@ -14,8 +14,11 @@ This means we need to produce two separate versions of the mod.
   - https://builds.bepinex.dev/projects/bepinex_be/688/BepInEx-Unity.IL2CPP-win-x64-6.0.0-be.688%2B4901521.zip
 - Extract BepInEx into the game directory (in `Steam\steamapps\common\Disco Elysium`)
 - Run the game once. You should see the BepInEx console.
-- From the directory `Disco Elysium\BepInEx\interop`, copy the files `Assembly-CSharp.dll`, `DialogueSystem.dll`, and
-  `IL2Cppmscorlib.dll`.
+- From the directory `Disco Elysium\BepInEx\interop`, copy these files:
+  - `Assembly-CSharp.dll`
+  - `DialogueSystem.dll`
+  - `IL2Cppmscorlib.dll`
+  - `UnityEngine.CoreModule.dll`
 - Create the directory `lib\` in project `FuriousTareSteam\`. Paste the DLL files.
 - - Open a console in `FuriousTareSteam`
 - Install dependencies: `dotnet restore`

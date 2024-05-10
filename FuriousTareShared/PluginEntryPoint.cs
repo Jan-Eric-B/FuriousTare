@@ -10,6 +10,7 @@ public class PluginEntryPoint
         var harmony = new Harmony(
             pluginGuid
         );
+        harmony.PatchAll(typeof(SkipIncorrectVoiceOver));
         harmony.PatchAll(typeof(VoiceOverFixAlternatives));
 
         Logger.Log.LogInfo(

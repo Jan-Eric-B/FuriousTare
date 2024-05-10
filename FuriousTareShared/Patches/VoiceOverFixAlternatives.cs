@@ -39,7 +39,7 @@ public class VoiceOverFixAlternatives
         if (_lastDialogueEntryId == entry.id && _lastAlternativeId != null && __result != _lastAlternativeId)
         {
             Logger.Log.LogInfo(
-                $"JanusNode.GetIDOfConditionMet() intercepted for dialogue \"{Field.LookupValue(entry.fields, "Title")}\". Entry ID {entry.id}. Original alternative: {__result}, new alternative: {_lastAlternativeId}"
+                $"JanusNode.GetIDOfConditionMet() intercepted for dialogue: \"{entry.Title}\". Entry ID: {entry.id}. Articy ID: {entry.ArticyID()}. Original alternative: {__result}, new alternative: {_lastAlternativeId}"
             );
             __result = _lastAlternativeId.Value;
         }
@@ -60,7 +60,7 @@ public class VoiceOverFixAlternatives
             entry
         );
         Logger.Log.LogDebug(
-            $"JanusNode.HandleEntry() intercepted. Title: {Field.LookupValue(entry.fields, "Title")}, ID: {_lastDialogueEntryId}, Articy ID: {Field.LookupValue(entry.fields, "Articy Id")}, dialogue alternative ID: {_lastAlternativeId}"
+            $"JanusNode.HandleEntry() intercepted. Title: {entry.Title}, ID: {_lastDialogueEntryId}, Articy ID: {entry.ArticyID()}, dialogue alternative ID: {_lastAlternativeId}"
         );
     }
 
