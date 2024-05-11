@@ -10,8 +10,19 @@ public class PluginEntryPoint
         var harmony = new Harmony(
             pluginGuid
         );
-        harmony.PatchAll(typeof(SkipIncorrectVoiceOver));
-        harmony.PatchAll(typeof(VoiceOverFixAlternatives));
+
+        foreach (var patch in new[]
+                 {
+                     typeof(DialoguePathFixes), typeof(SkipIncorrectVoiceOver), typeof(VoiceOverFixAlternatives)
+                 })
+        {
+            Logger.Log.LogInfo(
+                $"Applying patch: {patch.Name}"
+            );
+            harmony.PatchAll(
+                patch
+            );
+        }
 
         Logger.Log.LogInfo(
             $"Plugin \"{pluginName}\" (\"{pluginGuid}\") is loaded!"

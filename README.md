@@ -28,3 +28,5 @@ Dialogue fixes are marked with the "Articy ID", representing the unique node in 
 - `0x0100005800001E34`: The wrong voice-over clip plays when Cindy the Skull looks at Joyce.
   - This is a data problem - the voice-over clips for this dialogue entry were, perhaps, not recorded or imported into
     the game - and the correct clips do not exist in the game files. For now, we just skip playing the voice-over. 
+- `0x0100004500009218`: When asking Joyce for 10,000 reals, choosing "Hydrodynamique E40? Sounds fast." would trigger 
+  the correct response, _and also_ the response for the other dialogue choice ("I like high fidelity *anything*").
