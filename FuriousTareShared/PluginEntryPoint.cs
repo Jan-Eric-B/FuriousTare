@@ -11,9 +11,14 @@ public class PluginEntryPoint
             pluginGuid
         );
 
+        // DebugTypeLogger.RegisterPatches(typeof(FlashlightBehaviour));
+        
         foreach (var patch in new[]
                  {
-                     typeof(DialoguePathFixes), typeof(SkipIncorrectVoiceOver), typeof(VoiceOverFixAlternatives)
+                     typeof(DialoguePathFixes),
+                     typeof(SkipIncorrectVoiceOver),
+                     typeof(StopWavingThatFlashlight),
+                     typeof(VoiceOverFixAlternatives)
                  })
         {
             Logger.Log.LogInfo(

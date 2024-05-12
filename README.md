@@ -30,3 +30,5 @@ Dialogue fixes are marked with the "Articy ID", representing the unique node in 
     the game - and the correct clips do not exist in the game files. For now, we just skip playing the voice-over. 
 - `0x0100004500009218`: When asking Joyce for 10,000 reals, choosing "Hydrodynamique E40? Sounds fast." would trigger 
   the correct response, _and also_ the response for the other dialogue choice ("I like high fidelity *anything*").
+- When entering a conversation while holding a flashlight, the flashlight is supposed to stay still, but you could still
+  wave it around.
