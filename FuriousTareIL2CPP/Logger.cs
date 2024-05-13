@@ -1,4 +1,4 @@
-﻿namespace FuriousTareShared;
+﻿namespace FuriousTareIL2CPP;
 
 public class Logger
 {

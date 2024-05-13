@@ -1,7 +1,7 @@
 ﻿using HarmonyLib;
-using FuriousTareShared.Patches;
+using FuriousTareIL2CPP.Patches;
 
-namespace FuriousTareShared;
+namespace FuriousTareIL2CPP;
 
 public class PluginEntryPoint
 {

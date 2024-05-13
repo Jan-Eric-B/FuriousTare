@@ -1,6 +1,6 @@
 ﻿using PixelCrushers.DialogueSystem;
 
-namespace FuriousTareShared;
+namespace FuriousTareIL2CPP;
 
 public static class DialogueEntryExtensions
 {

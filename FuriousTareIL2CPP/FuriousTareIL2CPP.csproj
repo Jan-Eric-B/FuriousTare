@@ -11,8 +11,7 @@
             https://nuget.bepinex.dev/v3/index.json;
             https://nuget.samboy.dev/v3/index.json
         </RestoreAdditionalProjectSources>
-        <RootNamespace>FuriousTareSteam</RootNamespace>
-        <PackageId>FuriousTareSteam</PackageId>
+        <PackageId>FuriousTareIL2CPP</PackageId>
     </PropertyGroup>
 
     <ItemGroup>
@@ -35,9 +34,4 @@
         </Reference>
     </ItemGroup>
 
-    <ItemGroup>
-        <Compile Include="..\FuriousTareShared\**\*">
-            <Link>%(RecursiveDir)%(FileName)%(Extension)</Link>
-        </Compile>
-    </ItemGroup>
 </Project>

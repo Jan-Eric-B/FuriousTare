@@ -2,21 +2,17 @@ Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 
 Remove-Item -Force -Recurse -ErrorAction "Continue" -Path "temp/"
-mkdir -Path "temp\package\GOG\BepInEx\config","temp\package\GOG\BepInEx\plugins\FuriousTareGOG","temp\package\Steam\BepInEx\config","temp\package\Steam\BepInEx\plugins\FuriousTareSteam"
-Expand-Archive "BepInEx\BepInEx-Unity.Mono-*.zip" "temp\package\GOG"
-Expand-Archive "BepInEx\BepInEx-Unity.IL2CPP-*.zip" "temp\package\Steam"
+mkdir -Path "temp\package\IL2CPP\BepInEx\config","temp\package\IL2CPP\BepInEx\plugins\FuriousTare"
+Expand-Archive "BepInEx\BepInEx-Unity.IL2CPP-*.zip" "temp\package\IL2CPP"
 
-Copy-Item -Path "BepInEx\config\IL2CPP\BepInEx.cfg" -Destination "temp\package\Steam\BepInEx\config\"
-Copy-Item -Path "BepInEx\config\Mono\BepInEx.cfg" -Destination "temp\package\GOG\BepInEx\config\"
+Copy-Item -Path "BepInEx\config\IL2CPP\BepInEx.cfg" -Destination "temp\package\IL2CPP\BepInEx\config\"
 
 dotnet build --configuration "Release"
 
-Copy-Item -Path "FuriousTareGOG\bin\Release\netstandard2.0\FuriousTareGOG.dll" -Destination "temp\package\GOG\BepInEx\plugins\FuriousTareGOG"
-Copy-Item -Path "FuriousTareSteam\bin\Release\net6.0\FuriousTareSteam.dll" -Destination "temp\package\Steam\BepInEx\plugins\FuriousTareSteam"
+Copy-Item -Path "FuriousTareIL2CPP\bin\Release\net6.0\FuriousTareIL2CPP.dll" -Destination "temp\package\IL2CPP\BepInEx\plugins\FuriousTare"
 
 $Today = (Get-Date).ToUniversalTime().ToString('yyyy-MM-dd')
-Compress-Archive -Path "temp\package\GOG\*" -DestinationPath "temp\FuriousTareGOG_$Today.zip"
-Compress-Archive -Path "temp\package\Steam\*" -DestinationPath "temp\FuriousTareSteam_$Today.zip"
+Compress-Archive -Path "temp\package\IL2CPP\*" -DestinationPath "temp\FuriousTareIL2CPP_$Today.zip"
 Remove-Item -Force -Recurse -ErrorAction "Continue" -Path "temp/package"
 
 echo "Done!"

@@ -1,6 +1,6 @@
 ﻿using HarmonyLib;
 
-namespace FuriousTareShared.Patches;
+namespace FuriousTareIL2CPP.Patches;
 
 [HarmonyPatch(
     typeof(FlashlightBehaviour)

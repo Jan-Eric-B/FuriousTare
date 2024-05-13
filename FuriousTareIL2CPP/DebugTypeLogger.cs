@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
-using FuriousTareShared.Patches;
+using FuriousTareIL2CPP.Patches;
 using HarmonyLib;
 
-namespace FuriousTareShared;
+namespace FuriousTareIL2CPP;
 
 /**
  * Use this to intercept every method on a specific type.

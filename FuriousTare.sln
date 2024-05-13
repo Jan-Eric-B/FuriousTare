@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuriousTareSteam", "FuriousTareSteam\FuriousTareSteam.csproj", "{EE11382A-F0DA-4C1B-9F72-AF3E22E9145E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuriousTareGOG", "FuriousTareGOG\FuriousTareGOG.csproj", "{1A1230B9-CBE0-4C64-9651-14BFB5775860}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuriousTareIL2CPP", "FuriousTareIL2CPP\FuriousTareIL2CPP.csproj", "{EE11382A-F0DA-4C1B-9F72-AF3E22E9145E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,9 +12,5 @@ Global
 		{EE11382A-F0DA-4C1B-9F72-AF3E22E9145E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE11382A-F0DA-4C1B-9F72-AF3E22E9145E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE11382A-F0DA-4C1B-9F72-AF3E22E9145E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1A1230B9-CBE0-4C64-9651-14BFB5775860}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1A1230B9-CBE0-4C64-9651-14BFB5775860}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1A1230B9-CBE0-4C64-9651-14BFB5775860}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1A1230B9-CBE0-4C64-9651-14BFB5775860}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

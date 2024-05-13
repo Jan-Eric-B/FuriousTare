@@ -1,7 +1,7 @@
 ﻿using HarmonyLib;
 using PixelCrushers.DialogueSystem;
 
-namespace FuriousTareShared.Patches;
+namespace FuriousTareIL2CPP.Patches;
 
 [HarmonyPatch(
     typeof(Conversation),

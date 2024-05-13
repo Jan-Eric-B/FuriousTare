@@ -2,7 +2,7 @@
 using PixelCrushers.DialogueSystem;
 using VOTool;
 
-namespace FuriousTareShared.Patches;
+namespace FuriousTareIL2CPP.Patches;
 
 [HarmonyPatch(typeof(VoiceOverClipsPlayer), nameof(VoiceOverClipsPlayer.PlayVoiceClip))]
 public class SkipIncorrectVoiceOver

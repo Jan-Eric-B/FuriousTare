@@ -1,14 +1,14 @@
 ﻿# Unofficial Patch for Disco Elysium
 
-This mod fixes some outstanding bugs in Disco Elysium - The Final Cut, v2023-03-16.
+This mod fixes some outstanding bugs in Disco Elysium - The Final Cut, v2024-04-23.
 
-There are separate mods available for the GOG and Steam releases.
+The mod has been tested on the GOG and Steam releases for Windows. Older versions of the game are not officially
+supported (Steam might work, GOG will not, due to the game files being built in a different way).
 
 ## How to install
 
 - Download the zip for your version from the "Releases" page.
-  - For GOG, download "FuriousTareGOG.zip"
-  - For Steam, download "FuriousTareSteam.zip"
+  - For GOG or Steam, download "FuriousTareIL2CPP.zip"
 - Unzip the files into your game directory
   - E.g. `Steam\steamapps\common\Disco Elysium`
 
