@@ -60,7 +60,7 @@ public class DebugTypeLogger
             {
                 harmony.Patch(
                     method,
-                    postfix: patchMethod
+                    prefix: patchMethod
                 );
             }
         }
