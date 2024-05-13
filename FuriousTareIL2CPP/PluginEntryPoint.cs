@@ -12,11 +12,11 @@ public class PluginEntryPoint
     {
         typeof(DialoguePathFixes),
         typeof(MuzzleKimsBark),
+        typeof(RemapVoiceOvers), // should apply after VoiceOverFixAlternatives by using low priority
         typeof(SkipIncorrectVoiceOver),
         typeof(StopWavingThatFlashlight),
         typeof(ThrowAGunLoseAGun),
         typeof(VoiceOverFixAlternatives),
-        typeof(RemapVoiceOvers), // must come after VoiceOverFixAlternatives
     };
 
     private readonly Dictionary<Type, bool> _enabledPatches = new Dictionary<Type, bool>();

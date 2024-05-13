@@ -3,6 +3,7 @@ using PixelCrushers.DialogueSystem;
 
 namespace FuriousTareIL2CPP.Patches;
 
+[HarmonyPriority(Priority.Low)]
 [HarmonyPatch(
     typeof(JanusNode),
     nameof(JanusNode.GetIDOfConditionMet)
