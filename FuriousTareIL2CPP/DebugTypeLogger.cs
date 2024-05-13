@@ -17,15 +17,19 @@ public class DebugTypeLogger
 
     private static void DoHook(object __instance, MethodBase __originalMethod, object[] __args)
     {
-        var argsString = string.Join(
-            ", ",
-            __args
+        MethodInvocationCountDict.TryGetValue(
+            __originalMethod.Name,
+            out var invocationCount
         );
-        MethodInvocationCountDict.TryGetValue(__originalMethod.Name, out var invocationCount);
         if (invocationCount >= SuppressionThreshold)
         {
             return;
         }
+
+        var argsString = string.Join(
+            ", ",
+            __args
+        );
         Logger.Log.LogInfo(
             $"{__instance}.${__originalMethod.Name}({argsString})"
         );
