@@ -12,9 +12,25 @@ supported (Steam might work, GOG will not, due to the game files being built in 
 - Unzip the files into your game directory
   - E.g. `Steam\steamapps\common\Disco Elysium`
 
+## Configuration
+
+You can disable specific patch categories via a config file.
+
+Run the game once to generate the config file, then edit it. For example, to disable the change in flashlight behaviour,
+open `Disco Elysium\BepInEx\config\FuriousTareIL2CPP.cfg`, and change the value like so:
+
+```toml
+[Patches]
+StopWavingThatFlashlight = false
+```
+
+The patch categories are listed in the `Bugs fixed` section.
+
 ## Mod features
 
 ### Bugs fixed
+
+Each category of patch 
 
 Dialogue fixes are marked with the "Articy ID", representing the unique node in the dialogue graph.
 

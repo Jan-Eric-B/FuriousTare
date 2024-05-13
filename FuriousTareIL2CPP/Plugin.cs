@@ -20,6 +20,6 @@ public class Plugin : BasePlugin
 
     public override void Load()
     {
-        var pluginEntryPoint = new PluginEntryPoint(MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_GUID);
+        var pluginEntryPoint = new PluginEntryPoint(Config, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_GUID);
     }
 }

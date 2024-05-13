@@ -1,32 +1,63 @@
-﻿using HarmonyLib;
+﻿using System;
+using System.Collections.Generic;
+using BepInEx.Configuration;
+using HarmonyLib;
 using FuriousTareIL2CPP.Patches;
 
 namespace FuriousTareIL2CPP;
 
 public class PluginEntryPoint
 {
-    public PluginEntryPoint(string pluginName, string pluginGuid)
+    private static readonly Type[] Patches = new[]
     {
+        typeof(DialoguePathFixes),
+        typeof(SkipIncorrectVoiceOver),
+        typeof(StopWavingThatFlashlight),
+        typeof(VoiceOverFixAlternatives)
+    };
+
+    private readonly Dictionary<Type, bool> enabledPatches = new Dictionary<Type, bool>();
+    
+    private void LoadConfig(ConfigFile configFile)
+    {
+        foreach (var patch in Patches)
+        {
+            var configEntry = configFile.Bind(
+                "Patches",
+                patch.Name,
+                true
+            );
+            enabledPatches[patch] = configEntry.Value;
+        }
+    }
+    
+    public PluginEntryPoint(ConfigFile configFile, string pluginName, string pluginGuid)
+    {
+        LoadConfig(configFile);
+        
         var harmony = new Harmony(
             pluginGuid
         );
 
         // DebugTypeLogger.RegisterPatches(typeof(FlashlightBehaviour));
         
-        foreach (var patch in new[]
-                 {
-                     typeof(DialoguePathFixes),
-                     typeof(SkipIncorrectVoiceOver),
-                     typeof(StopWavingThatFlashlight),
-                     typeof(VoiceOverFixAlternatives)
-                 })
+        foreach (var patch in Patches)
         {
-            Logger.Log.LogInfo(
-                $"Applying patch: {patch.Name}"
-            );
-            harmony.PatchAll(
-                patch
-            );
+            if (enabledPatches[patch])
+            {
+                Logger.Log.LogInfo(
+                    $"Applying patch: {patch.Name}"
+                );
+                harmony.PatchAll(
+                    patch
+                );
+            }
+            else
+            {
+                Logger.Log.LogInfo(
+                    $"Skipping disabled patch: {patch.Name}"
+                );
+            }
         }
 
         Logger.Log.LogInfo(
