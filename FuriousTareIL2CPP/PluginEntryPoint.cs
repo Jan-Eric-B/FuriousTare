@@ -15,7 +15,8 @@ public class PluginEntryPoint
         typeof(SkipIncorrectVoiceOver),
         typeof(StopWavingThatFlashlight),
         typeof(ThrowAGunLoseAGun),
-        typeof(VoiceOverFixAlternatives)
+        typeof(VoiceOverFixAlternatives),
+        typeof(RemapVoiceOvers), // must come after VoiceOverFixAlternatives
     };
 
     private readonly Dictionary<Type, bool> _enabledPatches = new Dictionary<Type, bool>();
