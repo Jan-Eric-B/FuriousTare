@@ -1,5 +1,7 @@
 ﻿using FortressOccident;
 using HarmonyLib;
+using Sunshine.Metric;
+using UnityEngine;
 
 namespace FuriousTareIL2CPP.Patches;
 
@@ -12,13 +14,31 @@ public class StopWavingThatFlashlight
         typeof(Character),
         nameof(Character.ToggleFlashlightIK)
     )]
-    [HarmonyPostfix]
-    public static void OnCharacterToggleFlashlightIK(bool isEnabled)
+    [HarmonyPrefix]
+    public static void OnCharacterToggleFlashlightIK(ref bool __runOriginal, Character __instance, bool isEnabled)
     {
         Logger.Log.LogDebug(
-            $"Toggling character flashlight IK: {isEnabled}."
+            $"Toggling character flashlight IK: {isEnabled}. (Skipping original method)"
         );
         _isFlashlightIKEnabled = isEnabled;
+        if (InventoryViewData.Singleton.IsEquipped("flashlight"))
+        {
+            try
+            {
+                FlashlightBehaviour componentInChildren = __instance.GetComponentInChildren<FlashlightBehaviour>();
+                CrossPlatformInputManager.mCPIM.AnalogueCharPos.isFlashlightActive = isEnabled;
+                if (isEnabled)
+                {
+                    CrossPlatformInputManager.mCPIM.AnalogueCharPos.resetFlashlightPos();
+                }
+            }
+            catch
+            {
+                Debug.Log("Unable to toggle flashlight IK because flashlight is hidden");
+            }
+        }
+        
+        __runOriginal = false;
     }
 
     [HarmonyPatch(
