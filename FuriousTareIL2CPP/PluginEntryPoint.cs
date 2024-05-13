@@ -11,6 +11,7 @@ public class PluginEntryPoint
     private static readonly Type[] Patches = new[]
     {
         typeof(DialoguePathFixes),
+        typeof(MuzzleKimsBark),
         typeof(SkipIncorrectVoiceOver),
         typeof(StopWavingThatFlashlight),
         typeof(ThrowAGunLoseAGun),
