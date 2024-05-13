@@ -13,10 +13,11 @@ public class PluginEntryPoint
         typeof(DialoguePathFixes),
         typeof(SkipIncorrectVoiceOver),
         typeof(StopWavingThatFlashlight),
+        typeof(ThrowAGunLoseAGun),
         typeof(VoiceOverFixAlternatives)
     };
 
-    private readonly Dictionary<Type, bool> enabledPatches = new Dictionary<Type, bool>();
+    private readonly Dictionary<Type, bool> _enabledPatches = new Dictionary<Type, bool>();
     
     private void LoadConfig(ConfigFile configFile)
     {
@@ -27,7 +28,7 @@ public class PluginEntryPoint
                 patch.Name,
                 true
             );
-            enabledPatches[patch] = configEntry.Value;
+            _enabledPatches[patch] = configEntry.Value;
         }
     }
     
@@ -43,7 +44,7 @@ public class PluginEntryPoint
         
         foreach (var patch in Patches)
         {
-            if (enabledPatches[patch])
+            if (_enabledPatches[patch])
             {
                 Logger.Log.LogInfo(
                     $"Applying patch: {patch.Name}"

@@ -48,3 +48,4 @@ Dialogue fixes are marked with the "Articy ID", representing the unique node in 
   the correct response, _and also_ the response for the other dialogue choice ("I like high fidelity *anything*").
 - When entering a conversation while holding a flashlight, the flashlight is supposed to stay still, but you could still
   wave it around.
+- When throwing a gun, if you had both Villiers and Ruby guns, you would lose the Villiers even if you threw Ruby's.
