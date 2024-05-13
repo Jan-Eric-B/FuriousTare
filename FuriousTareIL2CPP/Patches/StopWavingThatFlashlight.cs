@@ -1,37 +1,39 @@
-﻿using HarmonyLib;
+﻿using FortressOccident;
+using HarmonyLib;
 
 namespace FuriousTareIL2CPP.Patches;
 
-[HarmonyPatch(
-    typeof(FlashlightBehaviour)
-)]
+[HarmonyPatch]
 public class StopWavingThatFlashlight
 {
-    private static bool isLightEnabled = false;
-    
+    private static bool _isFlashlightIKEnabled = false;
+
     [HarmonyPatch(
-        nameof(FlashlightBehaviour.EnableLights)
+        typeof(Character),
+        nameof(Character.ToggleFlashlightIK)
     )]
     [HarmonyPostfix]
-    public static void EnableLightsPostfix(bool setEnable)
+    public static void OnCharacterToggleFlashlightIK(bool isEnabled)
     {
-        Logger.Log.LogInfo(
-            $"FlashlightBehaviour EnableLights: {setEnable}."
+        Logger.Log.LogDebug(
+            $"Toggling character flashlight IK: {isEnabled}."
         );
-        isLightEnabled = setEnable;
+        _isFlashlightIKEnabled = isEnabled;
     }
-    
+
     [HarmonyPatch(
-        nameof(FlashlightBehaviour.OnIdleAnimFinished)
+        typeof(FlashlightTargetBehaviour),
+        nameof(FlashlightTargetBehaviour.Update)
     )]
     [HarmonyPrefix]
-    public static bool OnIdleAnimFinishedPrefix()
+    public static bool OnFlashlightTargetBehaviourUpdate()
     {
-        if (isLightEnabled)
+        if (!_isFlashlightIKEnabled)
         {
-            Logger.Log.LogDebug(
-                $"FlashlightBehaviour.OnIdleAnimFinished(): lights are already enabled, so idle anim probably wasn't started. Skipping execution."
-            );
+            // Too chatty, don't log this.
+            // Logger.Log.LogDebug(
+            //     $"Flashlight IK was disabled, so don't update the IK target"
+            // );
             return false;
         }
 
