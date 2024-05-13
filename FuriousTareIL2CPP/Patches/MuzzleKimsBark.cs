@@ -11,13 +11,13 @@ public class MuzzleKimsBark
 {
     private static DateTime? _lastCallTime;
 
-    public static bool Prefix()
+    public static void Prefix(ref bool __runOriginal)
     {
         var now = DateTime.UtcNow;
         if (_lastCallTime == null)
         {
             _lastCallTime = now;
-            return true;
+            return;
         }
 
         var diff = (now - _lastCallTime).Value.TotalSeconds;
@@ -30,6 +30,6 @@ public class MuzzleKimsBark
             );
         }
 
-        return shouldPlay;
+        __runOriginal = __runOriginal && shouldPlay;
     }
 }

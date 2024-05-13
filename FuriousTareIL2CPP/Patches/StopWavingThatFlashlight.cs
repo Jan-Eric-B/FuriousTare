@@ -26,7 +26,7 @@ public class StopWavingThatFlashlight
         nameof(FlashlightTargetBehaviour.Update)
     )]
     [HarmonyPrefix]
-    public static bool OnFlashlightTargetBehaviourUpdate()
+    public static void OnFlashlightTargetBehaviourUpdate(ref bool __runOriginal)
     {
         if (!_isFlashlightIKEnabled)
         {
@@ -34,9 +34,7 @@ public class StopWavingThatFlashlight
             // Logger.Log.LogDebug(
             //     $"Flashlight IK was disabled, so don't update the IK target"
             // );
-            return false;
+            __runOriginal = false;
         }
-
-        return true;
     }
 }

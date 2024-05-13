@@ -7,7 +7,7 @@ namespace FuriousTareIL2CPP.Patches;
 [HarmonyPatch(typeof(VoiceOverClipsPlayer), nameof(VoiceOverClipsPlayer.PlayVoiceClip))]
 public class SkipIncorrectVoiceOver
 {
-    public static bool Prefix(DialogueEntry entry)
+    public static void Prefix(ref bool __runOriginal, DialogueEntry entry)
     {
         var articyId = entry.ArticyID();
         // 0x0100005800001E34 = "Cindy the SKULL: \"She nods disdainfully toward the wo...\""
@@ -15,9 +15,8 @@ public class SkipIncorrectVoiceOver
         if (shouldSkipVoiceOver)
         {
             Logger.Log.LogInfo($"Skipping incorrect voiceover: \"{entry.Title}\". Articy ID: \"{articyId}\"");
-            return false;
+            __runOriginal = false;
+            return;
         }
-
-        return true;
     }
 }

@@ -11,7 +11,7 @@ public class ThrowAGunLoseAGun
 {
     
     // Original code would incorrectly throw ruby's gun if you had the Villiers gun
-    public static bool Prefix()
+    public static void Prefix(ref bool __runOriginal)
     {
         if (InventoryLuaFunctions.CheckItem("gun_ruby"))
         {
@@ -22,6 +22,6 @@ public class ThrowAGunLoseAGun
             InventoryLuaFunctions.LoseItem("gun_villiers");
         }
 
-        return false;
+        __runOriginal = false;
     }
 }
