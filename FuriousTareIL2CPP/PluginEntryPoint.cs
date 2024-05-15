@@ -11,6 +11,7 @@ public class PluginEntryPoint
     private static readonly Type[] Patches = new[]
     {
         typeof(DialoguePathFixes),
+        typeof(HandHud),
         typeof(MuzzleKimsBark),
         typeof(RemapVoiceOvers), // should apply after VoiceOverFixAlternatives by using low priority
         typeof(SkipIncorrectVoiceOver),

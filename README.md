@@ -36,6 +36,8 @@ Dialogue fixes are marked with the "Articy ID", representing the unique node in 
 
 - `DialoguePathFixes`: `0x0100004500009218`: When asking Joyce for 10,000 reals, choosing "Hydrodynamique E40? Sounds fast." would trigger
   the correct response, _and also_ the response for the other dialogue choice ("I like high fidelity *anything*").
+- `HandHud`: The hand HUD icons wouldn't respond to mouseover or clicks, except for a small area below the icons.
+  - This was because the clock's "rectangle" actually overlapped and blocked the icons.
 - `MuzzleKimsBark`: When attempting to open the locked apartment door, Kim's "bark" voice-over clip would trigger multiple
   times, making it much louder.
 - `SkipIncorrectVoiceOver`: `0x0100005800001E34`: The wrong voice-over clip plays when Cindy the Skull looks at Joyce.
