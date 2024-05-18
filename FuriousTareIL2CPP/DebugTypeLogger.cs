@@ -13,7 +13,7 @@ namespace FuriousTareIL2CPP;
 public class DebugTypeLogger
 {
     private static readonly Dictionary<string, int> MethodInvocationCountDict = new Dictionary<string, int>();
-    private const int SuppressionThreshold = 40;
+    private const int SuppressionThreshold = 200;
 
     private static void DoHook(object __instance, MethodBase __originalMethod, object[] __args)
     {
@@ -60,7 +60,7 @@ public class DebugTypeLogger
                      type
                  ))
         {
-            if (!method.IsGenericMethod && !method.IsAbstract)
+            if (!method.IsGenericMethod && !method.IsAbstract && !method.Name.StartsWith("get_") && !method.Name.StartsWith("set_"))
             {
                 harmony.Patch(
                     method,

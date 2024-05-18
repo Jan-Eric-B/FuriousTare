@@ -12,6 +12,7 @@ public class PluginEntryPoint
     {
         typeof(DialoguePathFixes),
         typeof(HandHud),
+        typeof(HandHudReplaceHeldItem),
         typeof(MuzzleKimsBark),
         typeof(RemapVoiceOvers), // should apply after VoiceOverFixAlternatives by using low priority
         typeof(SkipIncorrectVoiceOver),
@@ -43,7 +44,9 @@ public class PluginEntryPoint
             pluginGuid
         );
 
-        // DebugTypeLogger.RegisterPatches(typeof(FlashlightBehaviour));
+        // DebugTypeLogger.RegisterPatches(typeof(HudHeldButton));
+        // DebugTypeLogger.RegisterPatches(typeof(HudHeldPanelController));
+        // DebugTypeLogger.RegisterPatches(typeof(InventoryViewData));
         
         foreach (var patch in Patches)
         {
