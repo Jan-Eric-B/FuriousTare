@@ -15,6 +15,7 @@ public class PluginEntryPoint
         typeof(HandHudReplaceHeldItem),
         typeof(MuzzleKimsBark),
         typeof(RemapVoiceOvers), // should apply after VoiceOverFixAlternatives by using low priority
+        typeof(TweakHudWhiteSpace),
         typeof(SkipIncorrectVoiceOver),
         typeof(StopWavingThatFlashlight),
         typeof(ThrowAGunLoseAGun),
