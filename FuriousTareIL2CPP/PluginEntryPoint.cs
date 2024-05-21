@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using BepInEx.Configuration;
-using HarmonyLib;
 using FuriousTareIL2CPP.Patches;
+using HarmonyLib;
 
 namespace FuriousTareIL2CPP;
 
@@ -18,6 +18,7 @@ public class PluginEntryPoint
         typeof(TweakHudWhiteSpace),
         typeof(SkipIncorrectVoiceOver),
         typeof(StopWavingThatFlashlight),
+        typeof(TakeASwig),
         typeof(ThrowAGunLoseAGun),
         typeof(VoiceOverFixAlternatives),
     };

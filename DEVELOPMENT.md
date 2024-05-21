@@ -15,9 +15,10 @@
   - `Assembly-CSharp.dll`
   - `DialogueSystem.dll`
   - `IL2Cppmscorlib.dll`
+  - `UnityEngine.AnimationModule.dll`
   - `UnityEngine.CoreModule.dll`
 - Create the directory `lib\` in project `FuriousTareIL2CPP\`. Paste the DLL files.
-- - Open a console in `FuriousTareIL2CPP`
+- Open a console in `FuriousTareIL2CPP`
 - Install dependencies: `dotnet restore`
 - Build the plugin DLL: `dotnet build`.
 - Copy the built DLL from `bin\Debug\net6.0\FuriousTareIL2CPP.dll"`.
