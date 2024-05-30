@@ -34,6 +34,9 @@ Each category of patch
 
 Dialogue fixes are marked with the "Articy ID", representing the unique node in the dialogue graph.
 
+- `AbilityLabelOverflow`: The ability label number and pips would overflow onto the next line when you have 10 or more
+  points in an ability. This can happen if you have a Physique of 4, internalise "Revacholian Nationhood", and drink
+  three different alcohols.
 - `DialoguePathFixes`: `0x0100004500009218`: When asking Joyce for 10,000 reals, choosing "Hydrodynamique E40? Sounds fast." would trigger
   the correct response, _and also_ the response for the other dialogue choice ("I like high fidelity *anything*").
 - `HandHud`: The hand HUD icons wouldn't respond to mouseover or clicks, except for a small area below the icons.

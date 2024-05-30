@@ -15,6 +15,7 @@
   - `Assembly-CSharp.dll`
   - `DialogueSystem.dll`
   - `IL2Cppmscorlib.dll`
+  - `Unity.TextMeshPro.dll`
   - `UnityEngine.AnimationModule.dll`
   - `UnityEngine.CoreModule.dll`
 - Create the directory `lib\` in project `FuriousTareIL2CPP\`. Paste the DLL files.

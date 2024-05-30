@@ -10,6 +10,7 @@ public class PluginEntryPoint
 {
     private static readonly Type[] Patches = new[]
     {
+        typeof(AbilityLabelOverflow),
         typeof(DialoguePathFixes),
         typeof(HandHud),
         typeof(HandHudReplaceHeldItem),
