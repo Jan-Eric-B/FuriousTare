@@ -18,6 +18,7 @@
   - `Unity.TextMeshPro.dll`
   - `UnityEngine.AnimationModule.dll`
   - `UnityEngine.CoreModule.dll`
+  - `UnityEngine.UI.dll`
 - Create the directory `lib\` in project `FuriousTareIL2CPP\`. Paste the DLL files.
 - Open a console in `FuriousTareIL2CPP`
 - Install dependencies: `dotnet restore`

@@ -24,15 +24,24 @@ open `Disco Elysium\BepInEx\config\FuriousTareIL2CPP.cfg`, and change the value 
 StopWavingThatFlashlight = false
 ```
 
-The patch categories are listed in the `Bugs fixed` section.
+The patch names are listed in the `Bugs fixed` section.
+
+Some patches have additional configuration:
+
+```toml
+[ThoughtCabinetScrolling]
+
+## Change the scroll sensitivity in the thought cabinet description panels. Originally 1, defaults to 10.
+# Setting type: Int32
+# Default value: 10
+ScrollSensitivity = 10
+```
 
 ## Mod features
 
 ### Bugs fixed
 
-Each category of patch 
-
-Dialogue fixes are marked with the "Articy ID", representing the unique node in the dialogue graph.
+Some patches for dialogue fixes are marked with the "Articy ID", representing the unique node in the dialogue graph, e.g. `0x0100004500009218`.
 
 - `AbilityLabelOverflow`: The ability label number and pips would overflow onto the next line when you have 10 or more
   points in an ability. This can happen if you have a Physique of 4, internalise "Revacholian Nationhood", and drink
@@ -52,6 +61,8 @@ Dialogue fixes are marked with the "Articy ID", representing the unique node in 
   wave it around.
 - `TakeASwig`: Consuming a held substance sometimes doesn't play an animation when you're standing still, but does when
   you're moving, or if you switch to the inventory screen.
+- `ThoughtCabinetScrolling`: The Thought Cabinet description panel has very low scrolling sensitivity.
+  - The original value is 1. The new default value is 10. The sensitivity is configurable.
 - `ThrowAGunLoseAGun`: When throwing a gun, if you had both Villiers and Ruby guns, you would lose the Villiers even if you threw Ruby's.
 - `TweakHudWhiteSpace`: The bottom-right HUD UI white space could be improved:
   - The clock's right edge is too close to the day text.

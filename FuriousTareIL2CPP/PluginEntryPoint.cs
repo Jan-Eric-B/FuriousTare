@@ -20,6 +20,7 @@ public class PluginEntryPoint
         typeof(SkipIncorrectVoiceOver),
         typeof(StopWavingThatFlashlight),
         typeof(TakeASwig),
+        typeof(ThoughtCabinetScrolling),
         typeof(ThrowAGunLoseAGun),
         typeof(VoiceOverFixAlternatives),
     };
@@ -37,6 +38,13 @@ public class PluginEntryPoint
             );
             _enabledPatches[patch] = configEntry.Value;
         }
+        var configEntryThcScrollSensitivity = configFile.Bind(
+            nameof(ThoughtCabinetScrolling),
+            nameof(ThoughtCabinetScrolling.ScrollSensitivity),
+            10,
+            "Change the scroll sensitivity in the thought cabinet description panels. Originally 1, defaults to 10."
+        );
+        ThoughtCabinetScrolling.ScrollSensitivity = configEntryThcScrollSensitivity.Value;
     }
     
     public PluginEntryPoint(ConfigFile configFile, string pluginName, string pluginGuid)
