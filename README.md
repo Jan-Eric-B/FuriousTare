@@ -29,12 +29,12 @@ The patch names are listed in the `Bugs fixed` section.
 Some patches have additional configuration:
 
 ```toml
-[ThoughtCabinetScrolling]
+[ScrollSensitivityTweaks]
 
-## Change the scroll sensitivity in the thought cabinet description panels. Originally 1, defaults to 10.
-# Setting type: Int32
+## Scroll sensitivity for ThoughtCabinetDescription. Original value: 1
+# Setting type: Single
 # Default value: 10
-ScrollSensitivity = 10
+ThoughtCabinetDescription = 10
 ```
 
 ## Mod features
@@ -54,6 +54,8 @@ Some patches for dialogue fixes are marked with the "Articy ID", representing th
   from the HUD until you un-equip & re-equip it.
 - `MuzzleKimsBark`: When attempting to open the locked apartment door, Kim's "bark" voice-over clip would trigger multiple
   times, making it much louder.
+- `ScrollSensitivityTweaks`: Some scrolling text, like the Thought Cabinet description panel, has very low scrolling sensitivity.
+  - The sensitivity is configurable per panel.
 - `SkipIncorrectVoiceOver`: `0x0100005800001E34`: The wrong voice-over clip plays when Cindy the Skull looks at Joyce.
   - This is a data problem - the voice-over clips for this dialogue entry were, perhaps, not recorded or imported into
     the game - and the correct clips do not exist in the game files. For now, we just skip playing the voice-over. 
@@ -61,8 +63,6 @@ Some patches for dialogue fixes are marked with the "Articy ID", representing th
   wave it around.
 - `TakeASwig`: Consuming a held substance sometimes doesn't play an animation when you're standing still, but does when
   you're moving, or if you switch to the inventory screen.
-- `ThoughtCabinetScrolling`: The Thought Cabinet description panel has very low scrolling sensitivity.
-  - The original value is 1. The new default value is 10. The sensitivity is configurable.
 - `ThrowAGunLoseAGun`: When throwing a gun, if you had both Villiers and Ruby guns, you would lose the Villiers even if you threw Ruby's.
 - `TweakHudWhiteSpace`: The bottom-right HUD UI white space could be improved:
   - The clock's right edge is too close to the day text.
