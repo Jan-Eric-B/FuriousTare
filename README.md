@@ -31,10 +31,50 @@ Some patches have additional configuration:
 ```toml
 [ScrollSensitivityTweaks]
 
+## Scroll sensitivity for Dialogue. Original value: 20
+# Setting type: Single
+# Default value: 60
+Dialogue = 60
+
+## Scroll sensitivity for InventoryItemDescription. Original value: 10
+# Setting type: Single
+# Default value: 20
+InventoryItemDescription = 20
+
+## Scroll sensitivity for JournalTasksList. Original value: 10
+# Setting type: Single
+# Default value: 80
+JournalTasksList = 80
+
+## Scroll sensitivity for JournalWhiteChecks. Original value: 5
+# Setting type: Single
+# Default value: 40
+JournalWhiteChecks = 40
+
+## Scroll sensitivity for SaveLoadFileList. Original value: 30
+# Setting type: Single
+# Default value: 80
+SaveLoadFileList = 80
+
+## Scroll sensitivity for SkillDescription. Original value: 5
+# Setting type: Single
+# Default value: 10
+SkillDescription = 10
+
 ## Scroll sensitivity for ThoughtCabinetDescription. Original value: 1
 # Setting type: Single
 # Default value: 10
 ThoughtCabinetDescription = 10
+
+## Scroll sensitivity for ThoughtCabinetList. Original value: 20
+# Setting type: Single
+# Default value: 40
+ThoughtCabinetList = 40
+
+## Scroll sensitivity for ThoughtInternalised. Original value: 20
+# Setting type: Single
+# Default value: 40
+ThoughtInternalised = 40
 ```
 
 ## Mod features
