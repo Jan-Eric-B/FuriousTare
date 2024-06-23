@@ -11,6 +11,7 @@ public class PluginEntryPoint
     private static readonly Type[] Patches = new[]
     {
         typeof(AbilityLabelOverflow),
+        typeof(DisableCollageMode),
         typeof(DialoguePathFixes),
         typeof(HandHud),
         typeof(HandHudReplaceHeldItem),
