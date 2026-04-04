@@ -2,9 +2,9 @@
 
 ## Steam or GOG
 
-- Install Disco Elysium, version `2024-04-23`
+- Install Disco Elysium, version `2024-04-23` or later.
 - Install .NET SDK v6
-  - https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-6.0.421-windows-x64-installer
+  - https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-6.0.428-windows-x64-installer
   - This version was required to generate the plugin from a template, but perhaps a different version will work for you.
 - Download BepInEx v6 (4901521, build date 2024-02-10T05:53:59), for IL2CPP, Windows, x64
   - https://builds.bepinex.dev/projects/bepinex_be 
@@ -29,17 +29,17 @@
 
 ## Packaging a release
 
-- Copy the BepInEx zips, for both IL2CPP and Mono, into the project directory `BepInEx`
+- Copy the BepInEx IL2CPP zip into the project directory `BepInEx`
 - Ensure you can run unsigned PowerShell scripts: `Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope Process`
-- Run `package.ps1`. This will create two archives a `temp\` directory.
+- Run `package.ps1`. This will create an archive in a `temp\` directory.
 
 ## Reverse Engineering
 
 Disco Elysium GOG version `2023-03-16` was built using Mono, not IL2CPP. This makes it easy to read the decompiled
 code. Grab a copy, and open `Assembly-CSharp.dll` in something like `dnSpyEx` or `JetBrains dotPeek`.
 
-There is a logger class, `DebugTypeLogger` that will try to intercept and log all method calls on a class/instance. Use
-it like so:
+FuriousTare provides a logger class, `DebugTypeLogger`, that will try to intercept and log all method calls on a
+class/instance. Use it like so:
 
 ```csharp
 DebugTypeLogger.RegisterPatches(typeof(FlashlightBehaviour));

@@ -1,6 +1,7 @@
 ﻿# Unofficial Patch for Disco Elysium
 
-This mod fixes some outstanding bugs in Disco Elysium - The Final Cut, v2024-04-23.
+This mod fixes some outstanding bugs in Disco Elysium - The Final Cut. Initially developed for v2024-04-23 and somewhat
+tested up to v2026-01-05.
 
 The mod has been tested on the GOG and Steam releases for Windows. Older versions of the game are not officially
 supported (Steam might work, GOG will not, due to the game files being built in a different way).
